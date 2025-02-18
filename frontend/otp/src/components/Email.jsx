@@ -11,7 +11,7 @@ const Email = () => {
         e.preventDefault();
 
         try {
-            await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/otps/sendotp`, { email });
+            await axios.post('http://localhost:3000/otps/sendotp', { email });
             localStorage.setItem('userEmail', email); 
             navigate('/otp');  
         } catch (error) {
