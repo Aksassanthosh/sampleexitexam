@@ -21,7 +21,7 @@ const Otpform = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:3000/otps/verifyotp', { email, otp });
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/otps/verifyotp`, { email, otp });
             if (response.data.success) {
                 navigate('/welcome');  
             } else {
